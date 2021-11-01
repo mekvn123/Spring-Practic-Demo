@@ -38,10 +38,18 @@
         </where>
     </select>
 
-    <update id="updateUserInfo"></update>
+    <update id="updateUserInfo">
+
+    </update>
 
     <insert id="insertUserInfo"></insert>
-    <insert id="insertUsers"></insert>
+    <insert id="insertUsers">
+        INSERT INTO user_info
+        VALUES
+        <foreach item="item" collection="list" separator=",">
+            (#{item.userId},#{item.userName},#{item.userPassword},#{item.userEmail})
+        </foreach>
+    </insert>
 
     <resultMap id="UserPost" type="com.example.main_application_demo.domain.UserInfo">
         <id property="userId" column="user_id"/>
