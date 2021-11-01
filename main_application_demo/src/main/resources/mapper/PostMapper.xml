@@ -8,8 +8,14 @@
     </sql>
 
     <select id="findByUserId" resultType="com.example.main_application_demo.domain.Post">
-
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM post
+        <where>
+            user_id = #{userId}
+        </where>
     </select>
+
     <insert id="insertPosts">
         INSERT INTO post
         VALUES
