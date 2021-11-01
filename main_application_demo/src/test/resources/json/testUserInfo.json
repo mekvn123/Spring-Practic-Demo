@@ -1,0 +1,23 @@
+{
+  "userId": "ID00001",
+  "userName": "test_user_1",
+  "userPassword": "test_user_password",
+  "userEmail": "test_user@test.com",
+  "posts": [
+    {
+      "postId": "PO00001",
+      "comment": "comment 1",
+      "userId": "ID00001"
+    },
+    {
+      "postId": "PO00002",
+      "comment": "comment 2",
+      "userId": "ID00001"
+    },
+    {
+      "postId": "PO00003",
+      "comment": "comment 3",
+      "userId": "ID00001"
+    }
+  ]
+}
