@@ -20,11 +20,14 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    //feign client（注意与spring boot 版本的问题）
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.5'
+
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
     implementation 'commons-io:commons-io:2.6'
+    //fastJson
     implementation 'com.alibaba:fastjson:1.2.75'
     compileOnly 'org.projectlombok:lombok'
     compileOnly 'org.mapstruct:mapstruct:1.4.2.Final'

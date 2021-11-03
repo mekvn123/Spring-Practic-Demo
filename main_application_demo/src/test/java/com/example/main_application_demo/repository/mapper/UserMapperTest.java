@@ -1,7 +1,7 @@
 package com.example.main_application_demo.repository.mapper;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.main_application_demo.IntegrationTest;
+import com.example.main_application_demo.unit.IntegrationTest;
 import com.example.main_application_demo.adapter.persistence.PostMapper;
 import com.example.main_application_demo.adapter.persistence.UserMapper;
 import com.example.main_application_demo.domain.Post;
@@ -37,12 +37,11 @@ public class UserMapperTest extends IntegrationTest {
     class BaseTest {
         private User testUser;
 
-
         @BeforeAll
         void setTestUser() {
             String jsonFileName = "testUser.json";
             testUser = JsonHelper.deserialization(FileUtils.loadTestSuiteResource(jsonFileName), User.class);
-           }
+        }
 
         @Test
         @DisplayName("base save test")
@@ -88,7 +87,6 @@ public class UserMapperTest extends IntegrationTest {
             user = JsonHelper.deserialization(FileUtils.loadTestSuiteResource(jsonFileName), User.class);
             String jsonFileUserInfo = "testUserinfo.json";
             testUserInfo = JsonHelper.deserialization(FileUtils.loadTestSuiteResource(jsonFileUserInfo), UserInfo.class);
-
         }
 
         @Test

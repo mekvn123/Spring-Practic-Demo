@@ -8,9 +8,7 @@ public interface UserRepository {
 
     UserInfo findUserPostById(String id);
 
+    void saveUser(User user);
+
     void saveUsers(List<User> users);
-
-    void saveUsersAsync(List<User> collect);
-
-
 }

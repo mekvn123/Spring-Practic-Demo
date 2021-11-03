@@ -1,8 +1,10 @@
-package com.example.main_application_demo;
+package com.example.main_application_demo.unit;
 
+import com.example.main_application_demo.MainApplicationDemoApplication;
 import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import io.restassured.module.mockmvc.specification.MockMvcRequestSpecification;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +35,8 @@ public class IntegrationTest {
                 .header("Accept", ContentType.JSON.withCharset(UTF_8))
                 .header("Content-Type", ContentType.JSON.withCharset(UTF_8));
     }
+
+
+
+
 }

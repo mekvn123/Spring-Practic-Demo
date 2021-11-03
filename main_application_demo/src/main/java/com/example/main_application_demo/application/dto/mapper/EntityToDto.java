@@ -7,7 +7,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface EntityToDto {
-    EntityToDto INSTANCE = Mappers.getMapper(EntityToDto.class);
+    EntityToDto translate = Mappers.getMapper(com.example.main_application_demo.application.dto.mapper.EntityToDto.class);
 
     UserDto clone(User user);
 }

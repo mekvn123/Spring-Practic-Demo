@@ -12,25 +12,24 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
     private final UserMapper userMapper;
+
     @Override
     public User findById(String id) {
-        return null;
+        return userMapper.findUserById(id).orElseThrow(() -> new RuntimeException("user is not exist"));
     }
 
     @Override
     public UserInfo findUserPostById(String id) {
-        return null;
+        return userMapper.findUserPostById(id).orElseThrow(() -> new RuntimeException("user is not exist"));
+    }
+
+    @Override
+    public void saveUser(User user) {
+        userMapper.insertUser(user);
     }
 
     @Override
     public void saveUsers(List<User> users) {
-
+        userMapper.insertUsers(users);
     }
-
-    @Override
-    public void saveUsersAsync(List<User> collect) {
-
-    }
-
-
 }
