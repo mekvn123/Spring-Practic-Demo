@@ -35,8 +35,4 @@ public class IntegrationTest {
                 .header("Accept", ContentType.JSON.withCharset(UTF_8))
                 .header("Content-Type", ContentType.JSON.withCharset(UTF_8));
     }
-
-
-
-
 }

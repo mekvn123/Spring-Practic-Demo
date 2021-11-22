@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: gateway_demo
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test_demo?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    name: test_demo
+    username: root
+    password: password
+  flyway:
+    enabled: true
   cloud:
     gateway:
       enabled: true

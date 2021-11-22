@@ -18,7 +18,7 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    @Transactional()
+    @Transactional
     public void translate(String id) {
         try {
             userRepository.findById(id);
@@ -27,8 +27,14 @@ public class UserService {
         }
     }
 
+    @Transactional
     public void createUser(User user) {
-        user.setUserPassword(encodeFeignClient.getEncode(user.getUserPassword()));
+        user.setUserPassword(encodeFeignClient.getEncode("Base64", user.getUserPassword()));
+        try {
+            userRepository.findById(user.getUserId());
+        } catch (Exception ex) {
+            return;
+        }
         userRepository.saveUser(user);
     }
 }

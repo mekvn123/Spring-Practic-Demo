@@ -1,14 +1,12 @@
 package com.example.main_application_demo.API;
 
-import com.example.main_application_demo.application.dto.mapper.EntityToDto;
-import com.example.main_application_demo.unit.IntegrationTest;
 import com.example.main_application_demo.adapter.persistence.UserMapper;
 import com.example.main_application_demo.application.dto.UserDto;
 import com.example.main_application_demo.domain.User;
 import com.example.main_application_demo.unit.FileUtils;
+import com.example.main_application_demo.unit.IntegrationTest;
 import com.example.main_application_demo.unit.JsonHelper;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
