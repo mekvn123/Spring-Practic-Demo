@@ -48,12 +48,12 @@ public class UserInfoApiTest extends IntegrationTest {
     }
 
     @Test
-    void should_get_user_success_with_testRestTemplate() {
+    void should_get_user_fail_with_testRestTemplate() {
+        // in different transactional SqlSession
         userMapper.insertUser(user);
 
         ResponseEntity<UserDto> forEntity = testRestTemplate.getForEntity(String.format("/main_application_demo/user/%s", user.getUserId()), UserDto.class);
-        Assertions.assertEquals(HttpStatus.OK, forEntity.getStatusCode());
-        System.out.println(forEntity.getBody());
+        Assertions.assertEquals(HttpStatus.BAD_REQUEST, forEntity.getStatusCode());
     }
 
     @Test
