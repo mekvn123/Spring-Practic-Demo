@@ -3,6 +3,7 @@ package com.example.main_application_demo.application;
 import com.example.main_application_demo.client.EncodeFeignClient;
 import com.example.main_application_demo.domain.User;
 import com.example.main_application_demo.domain.UserRepository;
+import com.example.main_application_demo.exception.UserNotExistException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,16 +16,13 @@ public class UserService {
 
 
     public User getUser(String id) {
-        return userRepository.findById(id);
-    }
-
-    @Transactional
-    public void translate(String id) {
+        User userFound;
         try {
-            userRepository.findById(id);
+            userFound = userRepository.findById(id);
         } catch (RuntimeException ex) {
-            userRepository.saveUser(User.builder().userId(id).userName("translate").build());
+            throw new UserNotExistException(ex.getMessage());
         }
+        return userFound;
     }
 
     @Transactional
@@ -33,8 +31,7 @@ public class UserService {
         try {
             userRepository.findById(user.getUserId());
         } catch (Exception ex) {
-            return;
+            userRepository.saveUser(user);
         }
-        userRepository.saveUser(user);
     }
 }

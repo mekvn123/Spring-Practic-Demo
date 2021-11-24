@@ -67,12 +67,4 @@ public class UserInfoApiTest extends IntegrationTest {
                 .statusCode(200);
     }
 
-    @Test
-    void test_translate_with_mock_mvc() {
-        given()
-                .when()
-                .get(String.format("/main_application_demo/user/translate/%s", user.getUserId()))
-                .then()
-                .statusCode(200);
-    }
 }

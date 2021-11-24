@@ -34,8 +34,4 @@ public class UserInfoController {
         userService.createUser(user);
     }
 
-    @GetMapping("/user/translate/{id}")
-    public void testTranslate(@PathVariable String id) {
-        userService.translate(id);
-    }
 }
