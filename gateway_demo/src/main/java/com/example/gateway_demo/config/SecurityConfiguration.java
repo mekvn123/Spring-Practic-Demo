@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 @Slf4j
 public class SecurityConfiguration {
-
+//aad
 
 }
