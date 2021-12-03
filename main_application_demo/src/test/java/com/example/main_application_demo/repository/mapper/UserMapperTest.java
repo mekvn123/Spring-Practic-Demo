@@ -17,6 +17,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 import java.util.Optional;
@@ -91,6 +92,7 @@ public class UserMapperTest extends IntegrationTest {
 
         @Test
         @DisplayName("cascade select test")
+        @Sql(scripts = {""})
         void should_insert_userInfo_success_by_cascade_way() {
             // given
             userMapper.insertUser(user);
